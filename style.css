@@ -153,8 +153,8 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
+  padding-top: 10vh;
+  /*height: 96vh;*/
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -347,7 +347,7 @@ section {
 article {
   display: flex;
   width: 10rem;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   gap: 0.5rem;
 }
 
