@@ -204,6 +204,39 @@ section {
   margin-bottom: 30px; /* Increase this value to add more space */
 }
 
+.title_name {
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: 20px; /* Increase this value to add more space */
+  position: relative;
+  color: #ffffff;
+  -webkit-text-stroke: 0.05vw #ffffff;
+  text-transform: uppercase;
+}
+
+.title_name::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #01fe87;
+  -webkit-text-stroke: 0vw #ffffff;
+  border-right: 2px solid  #01fe87;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%, 10% {
+      width: 0;
+  }
+  70%, 90% {
+      width: 100%;
+  }
+}
+
 #socials-container {
   display: flex;
   justify-content: center;
@@ -327,6 +360,7 @@ section {
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .experience-details-container {
@@ -342,6 +376,7 @@ section {
   flex-direction: row;
   gap: 2.5rem;
   justify-content: space-around;
+  padding-right: inherit;
 }
 
 article {
@@ -433,6 +468,24 @@ footer p {
   text-align: center;
 }
 
+.view {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 /* Container to align the content in two columns */
 .about-details-container {
   display: flex;
@@ -444,6 +497,9 @@ footer p {
   display: flex;
   flex-direction: column;
   width: 40%; /* Adjust the width as needed */
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 /* Right column for the paragraph */
@@ -459,6 +515,20 @@ footer p {
   margin-bottom: 15px;
   border-radius: 8px;
 }
+
+/* Style for individual detail containers */
+.details-container-skill {
+  background-color: #f9f9f9; /* Add a background color if desired */
+  border: 1px solid #e0e0e0; /* Border styling */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  animation: appear ease-in;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+
+}
+
 
 /* Style for the text container (paragraph) */
 .text-container p {
